@@ -30,7 +30,7 @@ params:
   enableSharingButtons: false
   enableGlobalLanguageMenu: false
   enableThemeToggle: true
-  description: Security is Core - A Blog about IT Stuff
+  description: Security is Core - Tobias Schäfer's Blog
   keywords: blog
   images:
     - ""
@@ -48,6 +48,9 @@ menu:
     - identifier: posts
       name: Posts
       url: /posts
+    - identifier: about
+      name: About
+      url: https://tschaefer.org
 
 deployment:
   targets:
