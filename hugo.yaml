@@ -1,36 +1,55 @@
 ---
-baseurl: localhost
+baseurl: https://blog.tschaefer.org
 title: Security is Core
 languageCode: en-us
 theme: hello-friend-ng
 
+enableEmoji: true
+
+PygmentsCodeFences: true
+PygmentsStyle: solarized-dark
+
+permalinks:
+  posts: /posts/:year/:month/:day/:title
+
 params:
+  author:
+    name: Tobias Schäfer
   dateform: Jan 2, 2006
   dateformShort: Jan 2
   dateformNum: 2006-01-02
   dateformNumTime: 2006-01-02 15:04
-  homeSubtitle: A Blog about IT Stuff
+  homeSubtitle: Tobias Schäfer's Blog
   logo:
-    logoText: systemctl start blog.service
+    logoText: Security is Core
     logoHomeLink: /
     logoCursorColor: "#007bb8"
     logoCursorAnimate: 5s
+    logoCursorPathname: false
   disableReadOtherPosts: false
-  enableSharingButtons: true
+  enableSharingButtons: false
   enableGlobalLanguageMenu: false
   enableThemeToggle: true
-  description: My new homepage or blog
-  keywords: homepage, blog
+  description: Security is Core - A Blog about IT Stuff
+  keywords: blog
   images:
     - ""
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 taxonomies:
-  category: blog
   tag: tags
-  series: series
 
 menu:
   main:
     - identifier: posts
       name: Posts
       url: /posts
+
+deployment:
+  targets:
+    - name: production
+      url: "s3://blog.tschaefer.org?endpoint=https://minio.coresec.zone"
