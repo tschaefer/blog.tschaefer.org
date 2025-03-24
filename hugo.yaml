@@ -5,12 +5,13 @@ languageCode: en-us
 theme: hello-friend-ng
 
 enableEmoji: true
+enableGitInfo: true
 
 PygmentsCodeFences: true
 PygmentsStyle: solarized-dark
 
 permalinks:
-  posts: /posts/:year/:month/:day/:title
+  posts: /posts/:year/:month/:day/:title/
 
 params:
   author:
@@ -19,6 +20,7 @@ params:
   dateformShort: Jan 2
   dateformNum: 2006-01-02
   dateformNumTime: 2006-01-02 15:04
+  gitUrl: https://github.com/tschaefer/blog.tschaefer.org/commit/
   homeSubtitle: IT stuff and cycling
   logo:
     logoText: /home/
