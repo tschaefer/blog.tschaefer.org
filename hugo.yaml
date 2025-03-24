@@ -1,6 +1,6 @@
 ---
 baseurl: https://blog.tschaefer.org
-title: Security is Core
+title: Tobias Schäfer's Blog
 languageCode: en-us
 theme: hello-friend-ng
 
@@ -19,18 +19,18 @@ params:
   dateformShort: Jan 2
   dateformNum: 2006-01-02
   dateformNumTime: 2006-01-02 15:04
-  homeSubtitle: Tobias Schäfer's Blog
+  homeSubtitle: IT stuff and cycling
   logo:
-    logoText: Security is Core
+    logoText: /home/
     logoHomeLink: /
     logoCursorColor: "#007bb8"
     logoCursorAnimate: 5s
-    logoCursorPathname: false
+    logoCursorPathname: true
   disableReadOtherPosts: false
   enableSharingButtons: false
   enableGlobalLanguageMenu: false
   enableThemeToggle: true
-  description: Security is Core - Tobias Schäfer's Blog
+  description: Tobias Schäfer's Blog - IT stuff and cycling
   keywords: blog
   images:
     - ""
