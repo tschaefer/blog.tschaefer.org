@@ -47,12 +47,15 @@ taxonomies:
 
 menu:
   main:
-    - identifier: posts
-      name: Posts
-      url: /posts
-    - identifier: about
+    - identifier: 00-fortune
+      name: 🥠
+      url: https://fortune.tschaefer.org
+    - identifier: 01-about
       name: About
       url: https://tschaefer.org
+    - identifier: 02-posts
+      name: Posts
+      url: /posts
 
 deployment:
   targets:
