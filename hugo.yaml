@@ -21,7 +21,6 @@ params:
   dateformNum: 2006-01-02
   dateformNumTime: 2006-01-02 15:04
   gitUrl: https://github.com/tschaefer/blog.tschaefer.org/commit/
-  homeSubtitle: IT stuff and cycling
   logo:
     logoText: /home/
     logoHomeLink: /
@@ -47,10 +46,10 @@ taxonomies:
 
 menu:
   main:
-    - identifier: posts
-      name: Posts
-      url: /posts
-    - identifier: about
+    - identifier: 00-fortune
+      name: 🥠
+      url: https://fortune.tschaefer.org
+    - identifier: 01-about
       name: About
       url: https://tschaefer.org
 
