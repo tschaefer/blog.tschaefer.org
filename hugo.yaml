@@ -46,12 +46,12 @@ taxonomies:
 
 menu:
   main:
-    - identifier: 00-fortune
-      name: 🥠
-      url: https://fortune.tschaefer.org
     - identifier: 01-about
       name: About
       url: https://tschaefer.org
+    - identifier: 02-github
+      name: GitHub
+      url: https://github.com/tschaefer
 
 deployment:
   targets:
