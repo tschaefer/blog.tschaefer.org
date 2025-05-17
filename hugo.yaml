@@ -53,6 +53,9 @@ menu:
     - identifier: 02-github
       name: GitHub
       url: https://github.com/tschaefer
+    - identifier: 03-linkedin
+      name: LinkedIn
+      url: https://linkedin.com/in/tschaefer-org
 
 deployment:
   targets:
