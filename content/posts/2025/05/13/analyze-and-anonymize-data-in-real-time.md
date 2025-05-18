@@ -20,6 +20,24 @@ the [OpenFaaS](https://www.openfaas.com) function [Maceo](https://github.com/tsc
 Maceo utilizes [Microsoft Presidio](https://github.com/microsoft/presidio) to
 analyze and anonymize data.
 
+Presidio is an open-source framework for detecting, redacting, masking, and
+anonymizing sensitive data (PII) across text, images, and structured data.
+It supports NLP, pattern matching, and customizable pipelines.
+
+Presidio's features two main services for anonymization PII in text:
+
+* Presidio analyzer: Identification of PII in text
+* Presidio anonymizer: De-identify detected PII entities using different operators
+
+In most cases, we would run the Presidio analyzer to detect where PII entities
+exist, and then the Presidio anonymizer to remove those using specific operators
+(such as redact, replace, hash or encrypt)
+
+![Presidio Flow](https://microsoft.github.io/presidio/assets/analyze-anonymize.png)
+
+Maceo wraps the Presidio analyzer and anonymizer services and simplifies them
+in one single step receiving a text and returning the anonymized text.
+
 ![Architecture](/images/openfaas-maceo-hetzner.png)
 
 We will deploy Maceo and Presidio services with
@@ -73,7 +91,7 @@ faas-cli secret create --from-literal '{}' maceo
 Finally, we deploy the Maceo function.
 
 ```bash
-faas-cli deploy --image ghcr.io/tschaefer/maceo:0.1.0 --name maceo
+faas-cli deploy --image ghcr.io/tschaefer/maceo:0.1.1 --name maceo
 ```
 
 ## Test Maceo function
@@ -212,6 +230,38 @@ all supported entities are used.
 }
 ```
 
+The `anonymizer` section defines the anonymization operators to be used. The 
+default operators is `replace`, which replaces the detected PII entity with an
+entity label.
+
+```json
+"anonymizers": {
+    "DEFAULT": {
+        "type": "hash",
+        "new_value": "sha512"
+    }
+}
+```
+The `ad_hoc_recognizers` section allows you to define custom regex and
+deny-list based logic ad-hoc recognizers. By default, the section is empty.
+
+```json
+"ad_hoc_recognizers": [
+    {
+    "name": "Zip code Recognizer",
+    "supported_language": "en",
+    "patterns": [
+        {
+        "name": "zip code (weak)",
+        "regex": "(\\b\\d{5}(?:\\-\\d{4})?\\b)",
+        "score": 0.01
+        }
+    ],
+    "context": ["zip", "code"],
+    "supported_entity":"ZIP"
+    }
+]
+```
 Finally, the `score_threshold` section defines the minimum score for an entity
 to be detected. The default value is 0.0, and the maximum value is 1.0.
 
@@ -237,3 +287,9 @@ configuration and how to test the function. Maceo is a powerful tool for
 analyzing and anonymizing data in real-time, ensuring that sensitive
 information is protected. This allows organizations to leverage the power of
 AI while maintaining data privacy and compliance with regulations.
+
+## References
+
+- [OpenFaaS](https://docs.openfaas.com)
+- [Microsoft Presidio](https://microsoft.github.io/presidio/)
+- [Maceo](https://github.com/tschaefer/maceo)
