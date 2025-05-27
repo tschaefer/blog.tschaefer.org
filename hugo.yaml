@@ -61,3 +61,8 @@ deployment:
   targets:
     - name: production
       url: "s3://blog.tschaefer.org?endpoint=https://minio.coresec.zone"
+  matchers:
+    - pattern: "^.+\\.html$"
+      contentType: "text/html; charset=utf-8"
+    - pattern: "^.+\\.xml$"
+      contentType: "text/xml; charset=utf-8"
