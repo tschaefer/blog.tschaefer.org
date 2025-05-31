@@ -37,6 +37,8 @@ params:
   keywords: blog
   images:
     - ""
+  customCSS:
+    - /css/custom.css
 
 markup:
   goldmark:

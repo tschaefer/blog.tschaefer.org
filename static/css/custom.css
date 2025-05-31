@@ -1,0 +1,9 @@
+.post {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.header__inner {
+    max-width: 100%;
+    width: 960px;
+}
