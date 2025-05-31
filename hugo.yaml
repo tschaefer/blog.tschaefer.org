@@ -9,7 +9,8 @@ enableGitInfo: true
 enableRobotsTXT: true
 
 PygmentsCodeFences: true
-PygmentsStyle: solarized-dark
+PygmentsStyle: "nord"
+PygmentsUseClasses: false
 
 permalinks:
   posts: /posts/:year/:month/:day/:title/
