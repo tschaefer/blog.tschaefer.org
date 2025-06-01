@@ -3,7 +3,10 @@ title: "Analyze and Anonymize Data in Real-Time"
 date: 2025-05-13T10:48:20+02:00
 draft: false
 toc: false
+description: "In this post, we explore how to deploy the Maceo function and the Presidio analyzer and anonymizer services with faasd to redact sensitive data."
 images:
+    - "https://blog.tschaefer.org/images/openfaas-maceo-hetzner.png"
+author: "Tobias Schäfer"
 tags:
   - serverless functions
   - openfaas

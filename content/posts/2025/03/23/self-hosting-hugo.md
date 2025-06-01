@@ -3,7 +3,10 @@ title: "Self-hosting Hugo"
 date: 2025-03-23T20:31:58+01:00
 draft: false
 toc: false
+description: "This is the first post on my new Hugo blog which is being hosted
+on my Hetzner dedicated server, served by Traefik and Minio."
 images:
+author: "Tobias Schäfer"
 tags:
   - hugo
   - self-hosting

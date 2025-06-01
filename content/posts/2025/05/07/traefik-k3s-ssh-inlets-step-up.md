@@ -3,7 +3,10 @@ title: "Traefik, K3s, SSH and Inlets - Step Up"
 date: 2025-05-07T18:40:05+02:00
 draft: false
 toc: false
+description: "I learned my first lessons from K3s and inlets-pro on my Raspberry Pi 5 devices. And came up with a new tunnel architecture."
 images:
+    - "https://blog.tschaefer.org/images/inlets-ingress-snimux.png"
+author: "Tobias Schäfer"
 tags:
   - inlets
   - k3s

@@ -1,5 +1,11 @@
 ---
 title: "A Solid Semantic Search for RSS Feeds"
+description: "In this blog post, we explore how to index text information and
+perform semantic search on it using Sentence Transformers (SBERT) and SQLite
+with a Vector Extension."
+images:
+    - "https://blog.tschaefer.org/images/semantic-rss-search.png"
+author: "Tobias Schäfer"
 date: 2025-05-31T07:00:00+02:00
 draft: false
 toc: false

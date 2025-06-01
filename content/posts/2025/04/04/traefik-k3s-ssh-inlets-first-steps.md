@@ -3,7 +3,10 @@ title: "Traefik, K3s, SSH and Inlets - First Steps"
 date: 2025-04-04T21:21:31+02:00
 draft: false
 toc: false
+description: "In this blog post, I share my first steps with K3s, Traefik and Inlets Pro on Raspberry Pi 5 devices."
 images:
+    - "https://blog.tschaefer.org/images/traefik-inlets-snimux.png"
+author: "Tobias Schäfer"
 tags:
   - inlets
   - k3s
