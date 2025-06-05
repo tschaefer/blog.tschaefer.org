@@ -26,7 +26,7 @@ params:
   logo:
     logoText: /home/
     logoHomeLink: /
-    logoCursorColor: "#007bb8"
+    logoCursorColor: "#a9a9b3"
     logoCursorAnimate: 5s
     logoCursorPathname: true
   disableReadOtherPosts: false

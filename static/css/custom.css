@@ -9,6 +9,10 @@ img {
     border-radius: 8px;
 }
 
+blockquote {
+    border-color: var(--color-primary);
+}
+
 .post {
     width: 100%;
     max-width: 1000px;
