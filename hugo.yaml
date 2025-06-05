@@ -33,7 +33,7 @@ params:
   enableSharingButtons: false
   enableGlobalLanguageMenu: false
   enableThemeToggle: true
-  description: Tobias Schäfer's Blog - IT stuff and cycling
+  description: Tobias Schäfer's Blog about IT technology, security, and software development.
   keywords: blog
   images:
     - ""
