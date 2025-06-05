@@ -5,6 +5,10 @@ body {
     font-size: 1.2em;
 }
 
+img {
+    border-radius: 8px;
+}
+
 .post {
     width: 100%;
     max-width: 1000px;
