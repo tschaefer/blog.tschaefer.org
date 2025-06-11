@@ -7,6 +7,9 @@ body {
 
 img {
     border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary);
 }
 
 blockquote {
