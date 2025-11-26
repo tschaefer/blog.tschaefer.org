@@ -190,27 +190,39 @@ Loki-style example:
 ```json
 {
   "stream": {
-    "city": "Nuremberg",
-    "country": "Germany",
     "detected_level": "INFO",
-    "dport": "443",
-    "dst": "2a01:4f8:1c1c:b751::1",
-    "flow": "574674164",
-    "host": "core.example.com",
-    "lat": "49.4527",
+    "dst_addr": "2a01:4f8:160:5372::2",
+    "dst_addr_extracted": "2a01:4f8:160:5372::2",
+    "dst_city": "Falkenstein",
+    "dst_country": "Germany",
+    "dst_lat": "50.4777",
+    "dst_lon": "12.3649",
+    "dst_port": "443",
+    "dst_port_extracted": "443",
+    "flow": "4198226788",
+    "flow_extracted": "4198226788",
+    "host": "bullseye.u.coresec.zone",
     "level": "INFO",
-    "lon": "11.0783",
     "prot": "TCP",
+    "prot_extracted": "TCP",
     "service_name": "conntrackd",
-    "sport": "44950",
-    "src": "2003:cf:1716:7b64:d6e9:8aff:fe4f:7a59",
-    "state": "TIME_WAIT",
-    "type": "UPDATE"
+    "src_addr": "2003:cf:1716:7b64:da80:83ff:fecd:da51",
+    "src_addr_extracted": "2003:cf:1716:7b64:da80:83ff:fecd:da51",
+    "src_city": "Garmisch-Partenkirchen",
+    "src_country": "Germany",
+    "src_lat": "47.4906",
+    "src_lon": "11.1026",
+    "src_port": "56110",
+    "src_port_extracted": "56110",
+    "tcp_state": "SYN_SENT",
+    "tcp_state_extracted": "SYN_SENT",
+    "type": "NEW",
+    "type_extracted": "NEW"
   },
   "values": [
     [
-      "1763537351540294198",
-      "UPDATE TCP connection from 2003:cf:1716:7b64:d6e9:8aff:fe4f:7a59/44..."
+      "1764163739570953291",
+      "NEW TCP connection from [2003:cf:1716:7b64:da80:83ff:fecd:da51]:56110..."
     ]
   ]
 }
@@ -220,17 +232,25 @@ Stream sink example:
 
 ```json
 {
-  "time": "2025-11-22T11:34:43.181432081+01:00",
+  "time": "2025-11-26T14:33:03.250267203+01:00",
   "level": "INFO",
-  "msg": "NEW TCP connection from 2003:cf:1716:7b64:da80:83ff:fecd:da51/4...",
+  "msg": "NEW TCP connection from [2003:cf:1716:7b64:da80:83ff:fecd:da51]:5...",
   "type": "NEW",
-  "flow": 2899284024,
+  "flow": 4198226788,
   "prot": "TCP",
-  "src": "2003:cf:1716:7b64:da80:83ff:fecd:da51",
-  "dst": "2a01:4f8:160:5372::2",
-  "sport": 41220,
-  "dport": 80,
-  "state": "SYN_SENT"
+  "src_addr": "2003:cf:1716:7b64:da80:83ff:fecd:da51",
+  "dst_addr": "2a01:4f8:160:5372::2",
+  "src_port": 56110,
+  "dst_port": 443,
+  "tcp_state": "SYN_SENT",
+  "src_city": "Garmisch-Partenkirchen",
+  "src_country": "Germany",
+  "src_lat": 47.4906,
+  "src_lon": 11.1026,
+  "dst_city": "Falkenstein",
+  "dst_country": "Germany",
+  "dst_lat": 50.4777,
+  "dst_lon": 12.3649
 }
 ```
 
@@ -266,6 +286,7 @@ After=network.target
 [Service]
 ExecStart=/usr/local/bin/conntrackd run --config /etc/conntrackd/conntrackd.yaml
 Restart=on-failure
+RestartSec=5s
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW
 
 [Install]
@@ -298,3 +319,5 @@ conntrackd keeps the surface area small and the data useful.
 If you have ideas - tighter filtering predicates, new sinks, or dashboards -
 open an issue or a PR. I’d love to see how you use kernel conntrack events in
 the wild.
+
+<sup>Updated 2025-11-26: log structure changes in release [v1.2.0](https://github.com/tschaefer/conntrackd/releases/tag/v1.2.0)</sup>
