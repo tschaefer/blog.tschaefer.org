@@ -8,7 +8,6 @@ author: "Tobias Schäfer"
 date: 2025-06-18T20:11:45+02:00
 draft: false
 toc: false
-images:
 tags:
   - rpinfo
   - prometheus

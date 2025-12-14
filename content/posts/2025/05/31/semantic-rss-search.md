@@ -9,7 +9,6 @@ author: "Tobias Schäfer"
 date: 2025-05-31T07:00:00+02:00
 draft: false
 toc: false
-images:
 tags:
   - nlp
   - python
