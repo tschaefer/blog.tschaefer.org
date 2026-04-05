@@ -17,10 +17,11 @@ tags:
   - public-sector
 ---
 
-Zammad is widely used for ticketing and case management, including in public
-services. In those environments, **identity correctness is a security
-requirement**: wrong-account linking, unexpected re-activation, or silent
-identity drift are not "ops problems", they are audit and incident triggers.
+[Zammad](https://github.com/zammad/zammd) is widely used for ticketing and
+case management, including in public services. In those environments,
+**identity correctness is a security requirement**: wrong-account linking,
+unexpected re-activation, or silent identity drift are not "ops problems",
+they are audit and incident triggers.
 
 This post documents identity and provisioning behaviors that can lead to
 hard-to-defend security outcomes when Zammad is run with mixed identity
@@ -44,7 +45,7 @@ audit trails.
 
 ## Finding 1: SSO login can be silently linked to the wrong existing account
 
-When `auth_third_party_auto_link_at_inital_login` ((sic: upstream spelling) is
+When `auth_third_party_auto_link_at_inital_login` (sic: upstream spelling) is
 enabled and a first-time SSO login cannot find an existing account by
 `login == uid`, both OIDC and SAML fall back to matching by email address with
 no proof of ownership.
